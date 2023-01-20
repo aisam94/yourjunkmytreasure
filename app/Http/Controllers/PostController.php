@@ -20,13 +20,13 @@ class PostController extends Controller
                 ->where('title', 'like', '%' . request('search') . '%')
                 ->orWhere('body', 'like', '%' . request('search') . '%');
         }
-        return view('posts', ['posts' => $posts->filter(request(['search']))->get(), 'categories' => $categories]);
+        return view('posts.posts', ['posts' => $posts->filter(request(['search']))->get(), 'categories' => $categories]);
     }
 
     // view with post in argument
     public function show(Post $post)
     {
-        return view('post', ['post' => $post]);
+        return view('posts.post', ['post' => $post]);
     }
 
     // view to create post
