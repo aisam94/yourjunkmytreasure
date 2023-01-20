@@ -55,8 +55,7 @@ class PostController extends Controller
         $attributes = request()->validate([
             'title' => 'required',
             'slug' => ['required', Rule::unique('posts', 'slug')],
-            'excerpt' => 'required',
-            'body' => 'required',
+            'description' => 'required',
             'category_id' => ['required', Rule::exists('categories', 'id')],
         ]);
 
@@ -71,8 +70,7 @@ class PostController extends Controller
         $attributes = request()->validate([
             'title' => 'required',
             'slug' => ['required', Rule::unique('posts', 'slug')->ignore($post->id)],
-            'excerpt' => 'required',
-            'body' => 'required',
+            'description' => 'required',
             'category_id' => ['required', Rule::exists('categories', 'id')],
         ]);
 
