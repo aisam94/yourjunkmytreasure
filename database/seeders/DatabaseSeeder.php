@@ -31,47 +31,85 @@ class DatabaseSeeder extends Seeder
         ]);
 
         // some categories
-        $category1 = Category::factory()->create([
-            'name' => 'Books'
+        $books = Category::factory()->create([
+            'name' => 'Books',
+            'slug' => 'books'
         ]);
 
-        $category2 = Category::factory()->create([
-            'name' => 'Clothes'
+        $clothes = Category::factory()->create([
+            'name' => 'Clothes',
+            'slug' => 'clothes'
         ]);
 
-        $category3 = Category::factory()->create([
-            'name' => 'Furniture'
+        $furniture = Category::factory()->create([
+            'name' => 'Furniture',
+            'slug' => 'furniture'
         ]);
 
-        $category4 = Category::factory()->create([
-            'name' => 'Electrical Goods'
+        $electrical_goods = Category::factory()->create([
+            'name' => 'Electrical Goods',
+            'slug' => 'electrical-goods'
         ]);
 
         // some post
-        Post::factory(2)->create([
+        Post::factory(1)->create([
+            'title' => 'Electrical engineering',
             'user_id' => $user1->id,
-            'category_id' => $category1->id
+            'category_id' => $books->id
         ]);
 
-        Post::factory(2)->create([
+        Post::factory(1)->create([
+            'title' => 'Math theory',
             'user_id' => $user1->id,
-            'category_id' => $category2->id
+            'category_id' => $books->id
         ]);
 
-        Post::factory(2)->create([
+        Post::factory(1)->create([
+            'title' => 'White shirt',
+            'user_id' => $user1->id,
+            'category_id' => $clothes->id
+        ]);
+
+        Post::factory(1)->create([
+            'title' => 'Jeans',
+            'user_id' => $user1->id,
+            'category_id' => $clothes->id
+        ]);
+
+        Post::factory(1)->create([
+            'title' => 'Table',
             'user_id' => $user2->id,
-            'category_id' => $category3->id
+            'category_id' => $furniture->id
         ]);
 
-        Post::factory(3)->create([
+        Post::factory(1)->create([
+            'title' => 'Chair',
             'user_id' => $user2->id,
-            'category_id' => $category4->id
+            'category_id' => $furniture->id
         ]);
 
-        Post::factory(5)->create([
+        Post::factory(1)->create([
+            'title' => 'Mouse',
+            'user_id' => $user2->id,
+            'category_id' => $electrical_goods->id
+        ]);
+
+        Post::factory(1)->create([
+            'title' => 'Keyboard',
+            'user_id' => $user2->id,
+            'category_id' => $electrical_goods->id
+        ]);
+
+        Post::factory(1)->create([
+            'title' => 'Monitor',
             'user_id' => $user3->id,
-            'category_id' => $category4->id
+            'category_id' => $electrical_goods->id
         ]);
-        
+
+        Post::factory(1)->create([
+            'title' => 'MousePad',
+            'user_id' => $user3->id,
+            'category_id' => $electrical_goods->id
+        ]);
     }
 }
