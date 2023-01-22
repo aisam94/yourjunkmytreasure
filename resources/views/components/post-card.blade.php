@@ -48,12 +48,12 @@
     <!-- Button -->
     <div class="flex flex-grow items-center">
         <!-- Add to cart -->
-        <button class="m-1 capitalize w-full cursor-pointer bg-none border-2 border-black rounded-md font-bold hover:bg-blue-400">
+        <button class="m-1 capitalize w-full cursor-pointer bg-primary border-2 border-black rounded-md font-bold hover:bg-primary-focus">
             add to cart
         </button>
 
         <!-- View details -->
-        <button class="m-1 capitalize w-full cursor-pointer bg-none border-2 border-black rounded-md font-bold hover:bg-blue-400">
+        <button class="m-1 capitalize w-full cursor-pointer border-2 border-black rounded-md font-bold bg-secondary hover:bg-secondary-focus">
             view details
         </button>
     </div>

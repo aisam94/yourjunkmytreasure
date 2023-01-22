@@ -2,7 +2,7 @@
 @section('content')
 
 <section class="px-6 py-8">
-    <main class="max-w-lg mx-auto mt-10 bg-gray-100 border border-gray-200 p-6 rounded-xl">
+    <main class="max-w-lg mx-auto mt-10 bg-primary border border-gray-200 p-6 rounded-xl">
         <h1 class="text-center font-bold text-xl">Edit Post - {{ $post->title }}
         </h1>
         <form method="POST" action="/posts/{{ $post->id }}" class="mt-10">
@@ -16,7 +16,7 @@
                 </label>
                 <input class="border border-gray-400 p-2 w-full" type="text" name="title" id="title" value="{{ old('title', $post->title) }}" required>
                 @error('title')
-                <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                <p class="text-error text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
 
@@ -27,7 +27,7 @@
                 </label>
                 <input class="border border-gray-400 p-2 w-full" type="text" name="slug" id="slug" value="{{ old('slug', $post->slug) }}" required>
                 @error('slug')
-                <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                <p class="text-error text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
 
@@ -39,7 +39,7 @@ text-gray-700" for="description">
                 </label>
                 <textarea class="border border-gray-400 p-2 w-full" name="description" id="description" required>{{ old('description') }}</textarea>
                 @error('description')
-                <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                <p class="text-error text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
 
@@ -57,7 +57,7 @@ text-gray-700" for="description">
                     @endforeach
                 </select>
                 @error('category')
-                <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                <p class="text-error text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
 
@@ -69,7 +69,7 @@ text-gray-700" for="price">
                 </label>
                 <input class="border border-gray-400 p-2 w-full" type="number" name="price" id="price" value="{{ old('price') }}" required>
                 @error('price')
-                <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                <p class="text-error text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
 
@@ -81,13 +81,13 @@ text-gray-700" for="picture">
                 </label>
                 <input class="border border-gray-400 p-2 w-full" type="file" name="picture" id="picture" value="{{ old('picture') }}" required>
                 @error('picture')
-                <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                <p class="text-error text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
 
             <!-- Update -->
             <div class="mb-6">
-                <button type="submit" class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500">
+                <button type="submit" class="bg-primary text-white rounded py-2 px-4 hover:bg-accent">
                     Update
                 </button>
             </div>
@@ -96,7 +96,7 @@ text-gray-700" for="picture">
             @if ($errors->any())
             <ul>
                 @foreach($errors->all() as $error)
-                <li class="text-red-500 text-xs mt-1">{{ $error }}</li>
+                <li class="text-error text-xs mt-1">{{ $error }}</li>
                 @endforeach
             </ul>
             @endif

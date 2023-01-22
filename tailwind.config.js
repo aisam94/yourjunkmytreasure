@@ -7,6 +7,20 @@ module.exports = {
   ],
   theme: {
     extend: {},
+    colors: {
+      'primary': '#ffaebc',
+      'primary-focus': '#d98493',
+      'secondary': '#a0e7e5',
+      'secondary-focus': '#82cfcc',
+      'accent': '#b4f8c8',
+      'accent-focus': '#88d19e',
+      'black': '#011627',
+      'white': '#fdfffc',
+      'info': '#5bc0de',
+      'success': '#5cb85c',
+      'warning': '#f0ad4e',
+      'error': '#d9534f',
+    },
   },
   plugins: [],
 }
