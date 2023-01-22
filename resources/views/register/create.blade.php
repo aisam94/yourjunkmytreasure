@@ -9,7 +9,7 @@
 
             <!-- Name -->
             <div class="mb-6">
-                <label class="block mb-2 uppercase font-bold text-xs text-gray" for="name">
+                <label class="block mb-2 uppercase font-bold text-xs" for="name">
                     Name
                 </label>
                 <input class="border border-gray p-2 w-full" type="text" name="name" id="name" value="{{old('name')}}" required>
@@ -20,7 +20,7 @@
 
             <!-- Username -->
             <div class="mb-6">
-                <label class="block mb-2 uppercase font-bold text-xs text-gray" for="username">
+                <label class="block mb-2 uppercase font-bold text-xs" for="username">
                     Username
                 </label>
                 <input class="border border-gray p-2 w-full" type="text" name="username" id="username" value="{{old('username')}}" required>
@@ -31,7 +31,7 @@
 
             <!-- Email -->
             <div class="mb-6">
-                <label class="block mb-2 uppercase font-bold text-xs text-gray" for="email">
+                <label class="block mb-2 uppercase font-bold text-xs" for="email">
                     Email
                 </label>
                 <input class="border border-gray p-2 w-full" type="email" name="email" id="email" value="{{old('email')}}" required>
@@ -42,7 +42,7 @@
 
             <!-- Password -->
             <div class="mb-6">
-                <label class="block mb-2 uppercase font-bold text-xs text-gray" for="password">Password
+                <label class="block mb-2 uppercase font-bold text-xs" for="password">Password
                 </label>
                 <input class="border border-gray p-2 w-full" type="password" name="password" id="password" required>
                 @error('password')
