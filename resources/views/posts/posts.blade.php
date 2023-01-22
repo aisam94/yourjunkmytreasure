@@ -1,7 +1,9 @@
 @extends('components/layout')
 @section('content')
 
-<main class="mx-auto mt-6 lg:mt-20 space-y-6">
+@include('components/query')
+
+<main class="mx-auto mt-6 space-y-6">
     @if ($posts->count())
     <div class="grid grid-cols-3 justify-items-center mt-5 mx-5 justify-center">
         @foreach( $posts as $post)
