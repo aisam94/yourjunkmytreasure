@@ -14,13 +14,14 @@ class PostController extends Controller
     {
         $posts = Post::latest();
         $categories = Category::all();
+        $sellers = User::all();
 
         if (request('search')) {
             $posts
                 ->where('title', 'like', '%' . request('search') . '%')
                 ->orWhere('description', 'like', '%' . request('search') . '%');
         }
-        return view('posts.posts', ['posts' => $posts->filter(request(['search']))->get(), 'categories' => $categories]);
+        return view('posts.posts', ['posts' => $posts->filter(request(['search']))->get(), 'categories' => $categories, 'sellers' => $sellers]);
     }
 
     // view with post in argument

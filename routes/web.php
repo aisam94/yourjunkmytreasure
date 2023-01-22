@@ -26,12 +26,12 @@ Route::get('/posts/{post:slug}', [PostController::class, 'show']);
 
 // Page by category
 Route::get('/categories/{category:slug}', function (Category $category) {
-    return view('posts.posts', ['posts' => $category->posts, 'categories' => Category::all()]);
+    return view('posts.posts', ['posts' => $category->posts, 'categories' => Category::all(), 'sellers' => User::all()]);
 });
 
 // Page by author
 Route::get('/authors/{author:username}', function (User $author) {
-    return view('posts.posts', ['posts' => $author->posts]);
+    return view('posts.posts', ['posts' => $author->posts, 'categories' => Category::all(), 'sellers' => User::all()]);
 });
 
 // Register
