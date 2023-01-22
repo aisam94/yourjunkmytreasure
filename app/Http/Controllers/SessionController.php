@@ -8,7 +8,7 @@ class SessionController extends Controller
 {
     public function create()
     {
-        return view('sessions.create');
+        return view('login.create');
     }
 
     public function destroy()
