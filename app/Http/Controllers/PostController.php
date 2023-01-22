@@ -18,8 +18,11 @@ class PostController extends Controller
 
         if (request('search')) {
             $posts
-                ->where('title', 'like', '%' . request('search') . '%')
-                ->orWhere('description', 'like', '%' . request('search') . '%');
+                ->orWhere('title', 'like', '%' . request('search') . '%')
+                ->orWhere('description', 'like', '%' . request('search') . '%')
+                ->orWhereHas('user', function ($q) {
+                    $q->where('name', 'like', '%' . request('search') . '%');
+                });
         }
         return view('posts.posts', ['posts' => $posts->filter(request(['search']))->get(), 'categories' => $categories, 'sellers' => $sellers]);
     }
