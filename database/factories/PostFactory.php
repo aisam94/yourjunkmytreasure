@@ -22,10 +22,11 @@ class PostFactory extends Factory
             'user_id' => User::Factory(),
             'category_id' => Category::Factory(),
             'title' => $this->faker->sentence,
+            'title' => $this->faker->word,
             'slug' => $this->faker->slug,
             'description' => $this->faker->paragraph,
             'price' => $this->faker->numberBetween(5, 200),
-            'image' => $this->faker->imageUrl($width = 200, $height = 200)
+            'image' => $this->faker->imageUrl($width = 160, $height = 160)
         ];
     }
 }
