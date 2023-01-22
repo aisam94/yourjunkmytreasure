@@ -2,19 +2,19 @@
 @section('content')
 
 <section class="px-6 py-8">
-    <main class="max-w-5xl mx-auto mt-10 bg-primary border border-gray-200 p-6 rounded-xl">
+    <main class="max-w-5xl mx-auto mt-10 bg-primary border border-gray p-6 rounded-xl">
         <h1 class="text-center font-bold text-xl capitalize">manage post</h1>
         <div class="flex flex-col">
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div class="py-2 allign middle inline-block min-w-full sm:px-6 lg:px-8">
-                    <div class="shadow oveflow-hidden border-b border-gray-200 sm:rounded-lg">
-                        <table class="min-w-full divide-y divide-gray-200">
-                            <tbody class="bg-white divide-y divide-gray-200">
+                    <div class="shadow oveflow-hidden border-b border-gray sm:rounded-lg">
+                        <table class="min-w-full divide-y divide-gray">
+                            <tbody class="bg-white divide-y divide-gray">
                                 @foreach($posts as $post)
                                 <tr>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="flex items-center">
-                                            <div class="text-sm font-medium text-gray-900">
+                                            <div class="text-sm font-medium text-gray">
                                                 <a href="/posts/{{ $post->slug }}">
                                                     {{ $post->title }}
                                                 </a>
@@ -28,7 +28,7 @@
                                         <form method="POST" action="/posts/{{ $post->id }}">
                                             @csrf
                                             @method('DELETE')
-                                            <button class="text-xs text-gray-400">
+                                            <button class="text-xs text-gray">
                                                 Delete</button>
                                         </form>
                                     </td>

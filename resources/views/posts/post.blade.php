@@ -3,7 +3,7 @@
 
 <!-- This is a view to see single post only -->
 <main class="max-w-6xl mx-auto mt-10 lg:mt-20 space-y-6">
-    <article class="border-gray-400 border-2 rounded-lg shadow-md p-5 m-5">
+    <article class="border-gray border-2 rounded-lg shadow-md p-5 m-5">
         <div class="flex items-center">
             <!-- Left part -->
             <!-- Item's image -->
@@ -19,7 +19,7 @@
                 </h1>
 
                 <!-- Category -->
-                <div class="text-xs text-gray-400 text-center">
+                <div class="text-xs text-gray text-center">
                     {{$post->category->name}}
                 </div>
 

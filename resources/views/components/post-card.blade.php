@@ -1,7 +1,7 @@
 @props(['post'])
 
 <!-- This is components of post to be used when displaying all post in a page -->
-<article class="flex flex-col border-gray-400 border-2 rounded-lg shadow-md p-5 m-5 hover:scale-110 hover:shadow-2xl bg-white card">
+<article class="flex flex-col border-gray border-2 rounded-lg shadow-md p-3 m-5 hover:scale-125 ease-in duration-300 hover:shadow-3xl bg-white card">
     <div class="flex items-center">
         <!-- Left part -->
         <!-- Item's image -->
@@ -17,7 +17,7 @@
             </h1>
 
             <!-- Category -->
-            <div class="text-xs text-gray-400 text-center">
+            <div class="text-xs text-gray text-center">
                 {{$post->category->name}}
             </div>
 
@@ -36,7 +36,7 @@
 
                 <!-- Post by author -->
                 <div>
-                    <span class="text-xs truncate">
+                    <span class="text-xs truncate text-gray">
                         Posted by {{$post->author->name}} on <time>
                             {{$post->created_at->diffForHumans()}}
                         </time></span>
