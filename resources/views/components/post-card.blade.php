@@ -54,7 +54,9 @@
 
         <!-- View details -->
         <button class="m-1 capitalize w-full cursor-pointer border-2 border-black rounded-md font-bold bg-secondary hover:bg-secondary-focus">
-            view details
+            <a href='/posts/{{$post->slug}}'>
+                view details
+            </a>
         </button>
     </div>
 </article>

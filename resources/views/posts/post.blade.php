@@ -2,17 +2,18 @@
 @section('content')
 
 <!-- This is a view to see single post only -->
-<main class="max-w-6xl mx-auto mt-10 lg:mt-20 space-y-6">
-    <article class="border-gray border-2 rounded-lg shadow-md p-5 m-5">
-        <div class="flex items-center">
+<!-- <main class="max-w-6xl mx-auto mt-10 lg:mt-20 space-y-6"> -->
+<main class="">
+    <article class="flex flex-col border-gray border-2 rounded-lg shadow-md p-3 m-5 ease-in duration-300 bg-white w-1/2 mx-auto">
+        <div class="flex flex-col items-center">
             <!-- Left part -->
             <!-- Item's image -->
-            <div class="w-40 h-40 bg-red-500 "></div>
+            <img src='{{$post->image}}' alt='' />
 
             <!-- Right part -->
-            <div class="mx-5">
+            <div class="mx-5 relative">
                 <!-- Title -->
-                <h1>
+                <h1 class="top-0">
                     <a class="flex font-bold text-lg justify-center">
                         {{$post->title}}
                     </a>
@@ -24,31 +25,39 @@
                 </div>
 
                 <!-- Description -->
-                <div>
-                    <p class="">
-                        {{$post->description}}
-                    </p>
-                </div>
+                <p class="text-sm">
+                    {{$post->description}}
+                </p>
 
-                <!-- Price -->
-                <div>
-                    <div class="text-lg font-bold text-center">
-                        {{$post->price}}
+                <div class="">
+                    <!-- Price -->
+                    <div>
+                        <div class="text-lg font-bold text-center">
+                            RM{{number_format((float)$post->price, 2, '.', '')}}
+                        </div>
+                    </div>
+
+                    <!-- Post by author -->
+                    <div>
+                        <span class="text-xs truncate text-gray float-right">
+                            Posted by {{$post->author->name}} on <time>
+                                {{$post->created_at->diffForHumans()}}
+                            </time></span>
                     </div>
                 </div>
-
-                <!-- Post by author -->
-                <div>
-                    <span class="text-xs">
-                        Posted by {{$post->author->name}} on <time>
-                            {{$post->created_at->diffForHumans()}}
-                        </time></span>
-                </div>
-                <button class="capitalize w-full cursor-pointer bg-none border-2 border-black rounded-md font-bold hover:bg-blue-400">
-                    add to cart
-                </button>
             </div>
         </div>
+
+        <!-- Button -->
+        <div class="flex flex-grow items-center">
+            <!-- Add to cart -->
+            <button class="px-5 py-1 m-1 mx-auto capitalize cursor-pointer bg-primary border-2 border-black rounded-md font-bold hover:bg-primary-focus">
+                add to cart
+            </button>
+        </div>
     </article>
+
 </main>
+
+
 @endsection
