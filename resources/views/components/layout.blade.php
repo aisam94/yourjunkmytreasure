@@ -11,7 +11,7 @@
 <body class="antialiased">
     <!-- Navbar -->
     <nav class="flex justify-around items-center bg-gray-500 py-5">
-        <h1 class="text-3xl font-thin">YourJunkMyTreasure</h1>
+        <a href="/" class="text-3xl font-thin">YourJunkMyTreasure</a>
         <div class="absolute right-0 bg-pink-300 ">
             <div class="flex space-x-5 mx-1">
                 @auth

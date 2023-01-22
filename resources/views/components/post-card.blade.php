@@ -1,16 +1,16 @@
 @props(['post'])
 
 <!-- This is components of post to be used when displaying all post in a page -->
-<article class="border-gray-400 border-2 rounded-lg shadow-md p-5 m-5">
+<article class="flex flex-col border-gray-400 border-2 rounded-lg shadow-md p-5 m-5 hover:scale-110 hover:shadow-2xl bg-white card">
     <div class="flex items-center">
         <!-- Left part -->
         <!-- Item's image -->
-        <div class="w-40 h-40 bg-red-500 "></div>
+        <img src='{{$post->image}}' alt='' />
 
         <!-- Right part -->
-        <div class="mx-5">
+        <div class="mx-5 relative">
             <!-- Title -->
-            <h1>
+            <h1 class="top-0">
                 <a class="flex font-bold text-lg justify-center">
                     {{$post->title}}
                 </a>
@@ -22,29 +22,39 @@
             </div>
 
             <!-- Description -->
-            <div>
-                <p class="">
-                    {{$post->description}}
-                </p>
-            </div>
+            <p class="text-sm overflow-hidden text-ellipsis paragraph">
+                {{$post->description}}
+            </p>
 
-            <!-- Price -->
-            <div>
-                <div class="text-lg font-bold text-center">
-                    {{$post->price}}
+            <div class="">
+                <!-- Price -->
+                <div>
+                    <div class="text-lg font-bold text-center">
+                        RM{{number_format((float)$post->price, 2, '.', '')}}
+                    </div>
+                </div>
+
+                <!-- Post by author -->
+                <div>
+                    <span class="text-xs truncate">
+                        Posted by {{$post->author->name}} on <time>
+                            {{$post->created_at->diffForHumans()}}
+                        </time></span>
                 </div>
             </div>
-
-            <!-- Post by author -->
-            <div>
-                <span class="text-xs">
-                    Posted by {{$post->author->name}} on <time>
-                        {{$post->created_at->diffForHumans()}}
-                    </time></span>
-            </div>
-            <button class="capitalize w-full cursor-pointer bg-none border-2 border-black rounded-md font-bold hover:bg-blue-400">
-                add to cart
-            </button>
         </div>
+    </div>
+
+    <!-- Button -->
+    <div class="flex flex-grow items-center">
+        <!-- Add to cart -->
+        <button class="m-1 capitalize w-full cursor-pointer bg-none border-2 border-black rounded-md font-bold hover:bg-blue-400">
+            add to cart
+        </button>
+
+        <!-- View details -->
+        <button class="m-1 capitalize w-full cursor-pointer bg-none border-2 border-black rounded-md font-bold hover:bg-blue-400">
+            view details
+        </button>
     </div>
 </article>
