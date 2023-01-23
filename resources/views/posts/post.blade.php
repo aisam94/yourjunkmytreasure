@@ -8,7 +8,7 @@
         <div class="flex flex-col items-center">
             <!-- Left part -->
             <!-- Item's image -->
-            <img src='{{$post->image}}' alt='' />
+            <img class="" src="{{url('/images/' . $post->image)}}" alt='Image' width="200" height="200" />
 
             <!-- Right part -->
             <div class="mx-5 relative">
