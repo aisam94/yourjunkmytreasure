@@ -84,6 +84,8 @@ class PostController extends Controller
             'title' => 'required',
             'slug' => ['required', Rule::unique('posts', 'slug')->ignore($post->id)],
             'description' => 'required',
+            'price' => 'required',
+            'image' => 'required',
             'category_id' => ['required', Rule::exists('categories', 'id')],
         ]);
 

@@ -9,12 +9,18 @@
             @csrf
             @method('PATCH')
 
+            <!-- Image -->
+            <div class="flex justify-center">
+                <img class="" src="{{url('/images/' . $post->image)}}" alt='Image' width="200" height="200" />
+            </div>
+
             <!-- Title -->
             <div class="mb-6">
-                <label class="block mb-2 uppercase font-bold text-xs text-gray" for="title">
+                <label class="block mb-2 uppercase font-bold text-xs
+text-black" for="title">
                     Title
                 </label>
-                <input class="border border-gray p-2 w-full" type="text" name="title" id="title" value="{{ old('title', $post->title) }}" required>
+                <input class="border border-black p-2 w-full" type="text" name="title" id="title" value="{{ old('title', $post->title) }}" required>
                 @error('title')
                 <p class="text-error text-xs mt-1">{{ $message }}</p>
                 @enderror
@@ -22,10 +28,11 @@
 
             <!-- Slug -->
             <div class="mb-6">
-                <label class="block mb-2 uppercase font-bold text-xs text-gray" for="slug">
+                <label class="block mb-2 uppercase font-bold text-xs
+text-black" for="slug">
                     Slug
                 </label>
-                <input class="border border-gray p-2 w-full" type="text" name="slug" id="slug" value="{{ old('slug', $post->slug) }}" required>
+                <input class="border border-black p-2 w-full" type="text" name="slug" id="slug" value="{{ old('slug', $post->slug) }}" required>
                 @error('slug')
                 <p class="text-error text-xs mt-1">{{ $message }}</p>
                 @enderror
@@ -34,11 +41,35 @@
             <!-- Description -->
             <div class="mb-6">
                 <label class="block mb-2 uppercase font-bold text-xs
-text-gray" for="description">
+text-black" for="description">
                     Description
                 </label>
-                <textarea class="border border-gray p-2 w-full" name="description" id="description" required>{{ old('description') }}</textarea>
+                <textarea class="border border-black p-2 w-full" name="description" id="description" required>{{ old('description', $post->description) }}</textarea>
                 @error('description')
+                <p class="text-error text-xs mt-1">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <!-- Price -->
+            <div class="mb-6">
+                <label class="block mb-2 uppercase font-bold text-xs
+text-black" for="price">
+                    price
+                </label>
+                <input class="border border-black p-2 w-full" type="number" name="price" id="price" value="{{ old('price', $post->price) }}" required>
+                @error('price')
+                <p class="text-error text-xs mt-1">{{ $message }}</p>
+                @enderror
+            </div>
+
+            <!-- Image -->
+            <div class="mb-6">
+                <label class="block mb-2 uppercase font-bold text-xs
+text-black" for="image">
+                    image (new picture)
+                </label>
+                <input class="border border-black p-2 w-full bg-white" type="file" name="image" id="image" value="{{ old('image' ,url('/images/' . $post->image))}}">
+                @error('image')
                 <p class="text-error text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>
@@ -61,33 +92,9 @@ text-gray" for="description">
                 @enderror
             </div>
 
-            <!-- Price -->
-            <div class="mb-6">
-                <label class="block mb-2 uppercase font-bold text-xs
-text-gray" for="price">
-                    price
-                </label>
-                <input class="border border-gray p-2 w-full" type="number" name="price" id="price" value="{{ old('price') }}" required>
-                @error('price')
-                <p class="text-error text-xs mt-1">{{ $message }}</p>
-                @enderror
-            </div>
-
-            <!-- Image -->
-            <div class="mb-6">
-                <label class="block mb-2 uppercase font-bold text-xs
-text-gray" for="image">
-                    image
-                </label>
-                <input class="border border-gray p-2 w-full" type="file" name="image" id="image" value="{{ old('image') }}" required>
-                @error('image')
-                <p class="text-error text-xs mt-1">{{ $message }}</p>
-                @enderror
-            </div>
-
             <!-- Update -->
             <div class="mb-6">
-                <button type="submit" class="bg-primary text-white rounded py-2 px-4 hover:bg-accent">
+                <button type="submit" class="bg-secondary text-black rounded py-2 px-4 w-full hover:bg-secondary-focus">
                     Update
                 </button>
             </div>
