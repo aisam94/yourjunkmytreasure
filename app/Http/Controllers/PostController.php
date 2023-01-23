@@ -60,8 +60,17 @@ class PostController extends Controller
             'title' => 'required',
             'slug' => ['required', Rule::unique('posts', 'slug')],
             'description' => 'required',
+            'price' => 'required',
             'category_id' => ['required', Rule::exists('categories', 'id')],
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
+
+        // image handling
+        $image = $attributes['image'];
+        $destinationPath = public_path('/images');
+        $path = $image->store($destinationPath); // give unique name and store it
+        $image->move($destinationPath, $path); // move image to image folder
+        $attributes['image'] = basename($path);//save the image path in database
 
         $attributes['user_id'] = auth()->id();
         Post::create($attributes);

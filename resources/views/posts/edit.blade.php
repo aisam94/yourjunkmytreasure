@@ -73,14 +73,14 @@ text-gray" for="price">
                 @enderror
             </div>
 
-            <!-- Picture -->
+            <!-- Image -->
             <div class="mb-6">
                 <label class="block mb-2 uppercase font-bold text-xs
-text-gray" for="picture">
-                    picture
+text-gray" for="image">
+                    image
                 </label>
-                <input class="border border-gray p-2 w-full" type="file" name="picture" id="picture" value="{{ old('picture') }}" required>
-                @error('picture')
+                <input class="border border-gray p-2 w-full" type="file" name="image" id="image" value="{{ old('image') }}" required>
+                @error('image')
                 <p class="text-error text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>

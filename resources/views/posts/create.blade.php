@@ -6,7 +6,7 @@
 rounded-xl">
         <h1 class="text-center font-bold text-xl capitalize">create a post</h1>
 
-        <form method="POST" action="/create" class="mt-10">
+        <form method="POST" action="/create" class="mt-10" enctype="multipart/form-data">
             @csrf
 
             <!-- Title -->
@@ -57,14 +57,14 @@ text-black" for="price">
                 @enderror
             </div>
 
-            <!-- Picture -->
+            <!-- Image -->
             <div class="mb-6">
                 <label class="block mb-2 uppercase font-bold text-xs
-text-black" for="picture">
-                    picture
+text-black" for="image">
+                    image
                 </label>
-                <input class="border border-black p-2 w-full bg-white" type="file" name="picture" id="picture" value="{{ old('picture') }}" required>
-                @error('picture')
+                <input class="border border-black p-2 w-full bg-white" type="file" name="image" id="image" value="{{ old('image') }}" required>
+                @error('image')
                 <p class="text-error text-xs mt-1">{{ $message }}</p>
                 @enderror
             </div>

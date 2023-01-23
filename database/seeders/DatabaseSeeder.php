@@ -55,61 +55,72 @@ class DatabaseSeeder extends Seeder
         Post::factory(1)->create([
             'title' => 'Electrical engineering',
             'user_id' => $user1->id,
-            'category_id' => $books->id
+            'category_id' => $books->id,
+            'image' => 'books1.jpg'
         ]);
 
         Post::factory(1)->create([
             'title' => 'Math theory',
             'user_id' => $user1->id,
-            'category_id' => $books->id
+            'category_id' => $books->id,
+            'image' => 'books2.jpg'
         ]);
 
         Post::factory(1)->create([
             'title' => 'White shirt',
             'user_id' => $user1->id,
-            'category_id' => $clothes->id
+            'category_id' => $clothes->id,
+            'image' => 'whiteshirt.jpg'
+
         ]);
 
         Post::factory(1)->create([
             'title' => 'Jeans',
             'user_id' => $user1->id,
-            'category_id' => $clothes->id
+            'category_id' => $clothes->id,
+            'image' => 'jeans.png'
         ]);
 
         Post::factory(1)->create([
             'title' => 'Table',
             'user_id' => $user2->id,
-            'category_id' => $furniture->id
+            'category_id' => $furniture->id,
+            'image' => 'table.jpg'
         ]);
 
         Post::factory(1)->create([
             'title' => 'Chair',
             'user_id' => $user2->id,
-            'category_id' => $furniture->id
+            'category_id' => $furniture->id,
+            'image' => 'chair.jpg'
         ]);
 
         Post::factory(1)->create([
             'title' => 'Mouse',
             'user_id' => $user2->id,
-            'category_id' => $electrical_goods->id
+            'category_id' => $electrical_goods->id,
+            'image' => 'mouse.jpg'
         ]);
 
         Post::factory(1)->create([
             'title' => 'Keyboard',
             'user_id' => $user2->id,
-            'category_id' => $electrical_goods->id
+            'category_id' => $electrical_goods->id,
+            'image' => 'keyboard.jpeg'
         ]);
 
         Post::factory(1)->create([
             'title' => 'Monitor',
             'user_id' => $user3->id,
-            'category_id' => $electrical_goods->id
+            'category_id' => $electrical_goods->id,
+            'image' => 'monitor.jpg'
         ]);
 
         Post::factory(1)->create([
             'title' => 'MousePad',
             'user_id' => $user3->id,
-            'category_id' => $electrical_goods->id
+            'category_id' => $electrical_goods->id,
+            'image' => 'mousepad.jpg'
         ]);
     }
 }
